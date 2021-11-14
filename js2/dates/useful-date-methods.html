@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    'use strict';
+
+    const dateNow = new Date();
+    console.log(dateNow.toDateString()) // dateString csak dátummal
+    console.log(dateNow.toLocaleDateString('hu')) // magyar írásmód/nemzetiség szerint
+    console.log(dateNow.toTimeString()) // csak időpont
+    console.log(dateNow.toLocaleTimeString('en')) // írásmód
+    console.log(dateNow.toJSON()) // json formátum, a végén millisec. és UTC
+
+
+    console.log(Date.now()) // 1970-01-01 óta eltelt millisec. száma
+    console.log(Date.now() / 1000 / 60 / 60 / 24 / 365) // 
+
+  </script>
+</body>
+
+</html>

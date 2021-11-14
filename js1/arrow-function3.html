@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+       'use strict';
+
+       const user ={
+           firstName:'John',
+           lastName:'Doe',
+           fullName(){
+               console.log(this.firstName, this.lastName)
+           }, // ES2015 egyszerűsítés, nem kell a function kulcsszó és a :
+           fullNameArrow: () => console.log('Hello', this.firstName, this.lastName,this)
+       };
+       user.fullName();
+       user.fullNameArrow(); // this itt a window: Hello undefined undefined Window
+       // this itt az objektum szülője
+   </script> 
+</body>
+</html>

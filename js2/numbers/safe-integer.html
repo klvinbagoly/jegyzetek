@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+
+        console.log(Number.MAX_VALUE);//1.7976931348623157e+308 
+//A legnagyobb tárolható szám, felette Infinity.
+        console.log(Number.MIN_VALUE);//5e-324 Alatta -Infinity.
+
+        console.log(Number.MAX_SAFE_INTEGER)//9007199254740991
+//Efölött számítási pontatlanság várható.
+        console.log(Number.MIN_SAFE_INTEGER)//-9007199254740991
+
+        console.log(Number.isSafeInteger(42))//true
+        console.log(Number.isSafeInteger(9007199254740999))//false
+    </script>
+</body>
+</html>

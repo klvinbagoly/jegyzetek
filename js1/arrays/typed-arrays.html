@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        //Típusos tömbök: csak egy típusú adat van benne.
+        // Paraméter: a tömb hossza, vagy a tömb értékei.
+
+        const signedInt8Array = new Int8Array(3) // Előjeles egész számok 8bit. 
+        //(-128 ... +127)
+        //11111111 ...01111111: Első bit az előjel
+        signedInt8Array[0] = 12; // a többi 0-val inicializálódik.
+        signedInt8Array[1] = 128; // -128-nál újrakezdi a számokat.
+        console.log(signedInt8Array)
+
+        // Clamped array
+        const uintArray = new Uint8ClampedArray(3)//Előjel nélküli: 0 - 255
+        uintArray[0] = 12;
+        uintArray[1] = -130; // 0-nak veszi az értékhatáron kívül - a lehető legkisebb érték
+        uintArray[2] = 20000; // 255, a legnagyobb érték
+        console.log(uintArray)
+
+
+//         Int8Array() - 8 bites előjeles egész
+// Uint8Array() - 8 bites előjel nélküli egész
+// Uint8ClampedArray() - 8 bites előjel nélküli egész (a nem megfelelő értékeket módosítja a legkisebb/legnagyobb értékre)
+// Int16Array() - 16 bites előjeles egész
+// Uint16Array() - 16 bites előjel nélküli egész
+// Int32Array() - 32 bites előjeles egész
+// Uint32Array() - 32 bites előjel nélküli egész
+// Float32Array() - 32 bites lebegőpontos
+// Float64Array() - 64 bites lebegőpontos
+    </script>
+</body>
+</html>

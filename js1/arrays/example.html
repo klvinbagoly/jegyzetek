@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id='price-list'>
+        <li>
+            TV
+        </li>
+        <li data-company='Dell'>
+            Server
+        </li>
+        <li data-price='11.012,12'>
+            TV 
+        </li>
+        <li data-price='23.243,55'>
+            Server Monitor
+        </li>
+        <li data-price='4.543,29'>
+            TV 
+        </li>
+        <li data-price='230.323,32'>
+            Server Monitor
+        </li>
+        <li data-price='48.344,30'>
+            Server Monitor
+        </li>
+    </ul>
+    <script>
+        'use strict';
+
+
+        // const dataPrice = Array.from // Tömböt csinál a NodeList-ből.
+        // (document.querySelectorAll('#price-list li[data-price]'))   // Node-Listet ad vissza.
+        
+        // const monitors = dataPrice.filter(item => item.textContent.includes('Monitor'));
+        // const monitorsWithCorrectPrice = monitors.map(item => parseFloat(item.dataset.price
+        // .replace('.','').replace(',','.')))
+        // // a dataset tartalmazza az összes data-* attribútumot, ebből kell a price.
+        // const sumOfMonitorsPrice = monitorsWithCorrectPrice.reduce((first, next)=>first+next);
+
+        // Egyszerűsítve:
+
+        
+        const sumOfMonitorsPrice = Array
+         .from(document.querySelectorAll('#price-list li[data-price]'))  
+        .filter(item => item.textContent.includes('Monitor'))
+        .map(item => parseFloat(item.dataset.price
+        .replace('.','').replace(',','.')))
+        .reduce((first, next)=>first+next);
+    </script>
+</body>
+</html>

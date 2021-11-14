@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> // Objektum átadása paraméterként
+        'use strict';
+        // function getGrossPrice(param = {netPrice : 1000, vatPercent:27, discountPercent:5}){
+        //     return param.netPrice * (1 - param.discountPercent/100)*(1+param.vatPercent/100);
+        // }
+        // console.log(getGrossPrice({netPrice:10000})) //NaN lesz ha bármelyik hiányzik
+
+
+
+        function getGrossPrice({netPrice = 1000, vatPercent=27, discountPercent=5} = {}){
+            return netPrice * (1 - discountPercent/100)*(1+vatPercent/100);
+        }
+        console.log(getGrossPrice({netPrice:20000, discountPercent:1})) //Bármelyik hiányozhat.
+        </script>
+</body>
+</html>

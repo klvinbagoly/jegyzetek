@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    'use strict';
+
+    const charList = ['ä','a','z'];   
+    const germanCollator = new Intl.Collator('de'); // német abc-sorrend objektuma
+    const swedishCollator = new Intl.Collator('sv');
+    console.log(charList.sort(germanCollator.compare)) ;
+    console.log(charList.sort(swedishCollator.compare))  ; 
+    console.log(charList)
+    // a compare +1-et vagy -1-et ad vissza, abc sorrendtől függően.
+
+
+  </script>
+</body>
+</html>

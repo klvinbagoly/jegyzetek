@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    'use strict';
+
+    // . (pont) karakter: bármilyen karakter lehet a helyén
+    const pattern = /^.a/ // a 2. karakter legyen 'a'. Kezdődjön bármivel, utána 'a'
+    const text = 'ba';
+    console.log(text.match(pattern)) // ['ba', index: 0, input: 'ba', groups: undefined]
+    const pattern1 = /.a+/ // a + jel: legyen egy vagy több 'a' karakter (bárhol a . után)
+    const text1 = 'abraaaa'
+    console.log(text1.match(pattern1)) // ['raaaa', index: 2, input: 'abraaaa', groups: undefined]
+
+    const pattern2 = /.a*/ // a * jel: legyen 0 vagy több 'a' karakter
+
+    const text2 = 'b'
+    console.log(text2.match(pattern2)) // ['b', index: 0, input: 'abraaaa', groups: undefined]
+    
+    // ? előtti karakter: 0 vagy 1-szer szerepel
+    const pattern3 = /ba?/ // Kell egy b, majd 0 vagy 1 a.
+    const text3 = 'ab'
+    console.log(text3.match(pattern3))  // 'b', index: 1, ...
+  </script>
+</body>
+</html>

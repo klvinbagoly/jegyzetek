@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    'use strict';
+ // Egy karakterhalmazból bármelyik szerepel-e a stringben: [karakterek]
+    const pattern = /[abc]/   
+
+    const text = 'abraka dabra';
+    console.log(text.match(pattern)) // ['a', index: 0, input: 'abraka dabra', groups: undefined]
+    const pattern1 = /[abc]/g
+    const pattern2 = /^[abc]/
+    const pattern3 = /[abc]$/
+    const pattern4 = /^(ab|bc)/   // Kezdődjön ab vagy bc-vel a string
+    const pattern5 = /^(ab|bc)$/   // ab vagy bc legyen a string tartalma
+    console.log(text.match(pattern1)) // (7) ['a', 'b', 'a', 'a', 'a', 'b', 'a']
+    console.log(text.match(pattern2)) // ['a', index: 0, ...
+    console.log(text.match(pattern3)) // ['a', index: 11, ...
+    console.log(text.match(pattern4)) // (2) ['ab', 'ab', index: 0, input: 'abraka dabra', groups: undefined]0: "ab"1: "ab"groups: undefinedindex: 0input: "abraka dabra"length: 2[[Prototype]]: Array(0)
+
+    console.log('ab'.match(pattern4)) // (2) ['ab', 'ab', index: 0, input: 'abraka dabra', groups: undefined]0: "ab"1: "ab"groups: undefinedindex: 0input: "abraka dabra"length: 2[[Prototype]]: Array(0)
+
+
+
+
+  </script>
+</body>
+</html>

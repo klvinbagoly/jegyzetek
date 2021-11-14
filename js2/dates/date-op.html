@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    'use strict';
+
+    // A függvény megnézi, a user fel van-e függesztve.
+    // paraméterek: Hány órára lett felfüggesztve, és mikor.
+    function isSuspended(suspendTimeInHours, whenSuspended) {
+      if (!whenSuspended) {
+        return false
+      };
+      const now = new Date();
+      const elapsedTimeInHours = (now.getTime() -  //1970-01-01 óta eltelt ms-ok
+        whenSuspended.getTime()) / 1000 / 60 / 60;
+      return !(elapsedTimeInHours > suspendTimeInHours);
+    }
+
+
+    console.log(isSuspended(12))
+    console.log(isSuspended(12, new Date('2021-11-05T07:11:11')))
+  </script>
+</body>
+
+</html>

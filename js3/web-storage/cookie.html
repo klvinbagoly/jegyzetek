@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    'use strict';
+
+    // limitek régen: rfc2109, total: 300, 20/domain és max. 4K méretűek
+    // most: http://browsercookielimits.squawky.net/
+
+    document.cookie = 'username=John Doe; expires=Fri, 01 Jan 2022 12:00:00 UTC; path=/'
+     // A süti látható a DevTools Application fülében a Cookies menüpontban.
+     // Megadjuk a nevét, a lejárati idejét, és az elérhetőségi útvonalat.
+    document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/'
+
+     // => süti törlése: username üres, expires múltbéli détum - Zero time
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+
+        const numericArray = [1, 53, 412, 54,554453,4334];
+        function compare(a,b){ 
+            return a-b;   // Ha pozitív a kapott érték, akkor a sort motódus megcseréli a két számot.
+        }
+        numericArray.sort(compare); // ua. mint:
+        //numericArray.sort(function compare(a,b){ 
+        //    return a-b;
+        //    }) A sort() itt egy higher order function, mert egy másik függvény a paramétere.
+        console.log(numericArray);
+        
+        numericArray.sort(function(a,b){
+            return b-a;
+        })
+        console.log(numericArray);
+
+    </script>
+</body>
+</html>

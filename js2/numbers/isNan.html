@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        console.log('---Global isNaN()---')
+        console.log(isNaN(true))///false, mert át tudja konvertálni számmá.
+        console.log(isNaN('hello'))///true, nem lehet számmá alakítani.
+        console.log(isNaN(12))///false
+        console.log(isNaN(NaN))//true
+        console.log(isNaN('NaN'))//true
+
+        console.log('---Number.isNaN()---')
+        console.log(Number.isNaN(true))///false
+        console.log(Number.isNaN('hello'))///false
+        console.log(Number.isNaN(12))///false
+        console.log(Number.isNaN(NaN))//true - Csak a NaN-nal lesz true.
+        console.log(Number.isNaN('NaN'))//false
+    </script>
+</body>
+</html>

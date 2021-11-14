@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    'use strict';
+
+    // Böngőszőtől függően akár 5-10 MB is lehet.
+    // Csak kulcs-érték párokat tárolnak.
+    // Session - a lap bezárása után törlődik, a local direkt törléskor.
+
+    localStorage.setItem('username', JSON.stringify({name: 'John Doe'})) // Egy kulcs-érték pár megadása.
+
+    // Application / Local Storage
+    // A local és session storage mindent stringben tárol!!
+    // Ha objektumot akarunk eltárolni, JSON.stringify metódus.
+    // Lekérdezéskor JSON.parse.
+    console.log(localStorage.getItem('username')) // stringet ad vissza
+    console.log(JSON.parse(localStorage.getItem('username'))) // Elem lekérdezése.
+    console.log(localStorage.key(0)) // 0. indexű kulcs lekérdezése.
+
+    localStorage.removeItem('username') // Elem eltávolítása.
+    localStorage.clear() //Az egész storage-ot kiüríti.
+  </script>
+</body>
+</html>

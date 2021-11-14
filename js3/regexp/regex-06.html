@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    'use strict';
+      // Custom count / számosság
+      const pattern = /ba{2,5}./; // Az a karakter a b után legalább 2-szer, legfeljebb 5-ször.
+      const text = 'abaaaaaaaaaaaa'
+      console.log(text.match(pattern))  // ['baaaaa', index: 1, input: 'abaaaaaaaaaaaa', groups: undefined]
+      const pattern1 = /ba{2,5}[^a]/; // a 2-5 a karakter után egy nem 'a' karaker jöjjön.
+      console.log(text.match(pattern1))  //null
+
+  </script>
+</body>
+</html>

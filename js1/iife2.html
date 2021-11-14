@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        (function(){
+            function calculate(a,b){
+                return a + b;
+            }
+            console.log(calculate(1,2)) // 3
+            {
+                function calculate(a,b){
+                    return a * b;
+                }
+                console.log(calculate(2,3)) // 6
+            }
+            console.log(calculate(2,3))  // 5 /strict mode nélkül 6/
+        })();
+    </script>
+</body>
+</html>

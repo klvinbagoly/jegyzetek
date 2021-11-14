@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+
+        // 7 primitív típus: string, number, boolean, null, undefined, symbol, BigInt.
+        //Tetszőlegesen nagy egész számokat tárol.
+
+        const max = Number.MAX_VALUE;
+        const bigIntNumber = BigInt(max);
+        console.log(typeof bigIntNumber, bigIntNumber)// bigint
+        //179769313486231570814527423731704356798070567
+        // 525844996598917476803157260780028538760589558632
+        // 766878171540458953514382464234321326889464182768
+        // 4675467035375169860499105765512820762454900903893
+        // 2894407586850845513394230458323690322294816580855
+        // 933212334827479782620414472316873817718091929988125
+        // 0404026184124858368n
+        //console.log(bigIntNumber ** 2) Hiba: Nem keverhető más típussal
+        console.log(bigIntNumber ** 2n) //  az n betű jelöli a bigint típust
+
+
+
+
+
+    </script>
+</body>
+</html>

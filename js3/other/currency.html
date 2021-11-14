@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    'use strict';
+
+    const USCurrency = new Intl.NumberFormat('en-US',{ 
+      // Options objektumban megadjuk, mi szerint formázza a számot.
+      style: 'currency', currency:'USD'
+    });
+    const gbCurrency = new Intl.NumberFormat('en-GB',{ 
+      style: 'currency', currency:'GBP'
+    });
+    const deCurrency = new Intl.NumberFormat('de-DE',{ 
+      style: 'currency', currency:'EUR'
+    });
+
+    console.log(USCurrency.format(100200400.45));
+    console.log(gbCurrency.format(100200400.45));
+    console.log(deCurrency.format(100200400.45));
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="click-me">click me</button>
+    <button class="click-me">click me</button>
+    <button class="click-me">click me</button>
+    <script>
+        'use strict';
+
+        // Kiemeljük a ciklusmagot egy függvénybe, és átadjuk az i-t.
+        // Az átadott i már function scope-ú, tehát az eseményfigyelő 0, 1, 2-t fog kiírni.
+        // (A globális i viszont még mindig 3 lesz!)
+        function clickHandler(i){
+            elements[i].addEventListener('click', function(){
+                console.log('item: ' + i);
+            })
+        };
+
+        var elements = document.querySelectorAll('.click-me');
+        for (var i=0; i<elements.length; i++){
+            clickHandler(i);
+        }
+    
+    </script>
+</body>
+</html>

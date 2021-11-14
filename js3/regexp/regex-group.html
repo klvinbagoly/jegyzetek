@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    'use strict';
+    const pattern = /[a-z]/ // Az összes angol kisbetű megfelel.   
+    const text = 'abraka dabra'; // 'a', index: 0
+    console.log(text.match(pattern)) 
+    
+    const pattern1 = /^[a-z]+$/ // csak angol kisbetűkből álljon(szóköz nélkül), és legalább 1 karakter legyen(+ jel)
+    const pattern2 = /^[a-zA-Z]+$/ // csak angol kis- vagy nagy betűkből álljon és legalább 1 karakter legyen(+ jel)
+    const pattern3 = /^[a-zA-Z0-9_]+$/ // kis-vagy nagybetűk vagy számjegyek, vagy _ alsóvonás.
+    const pattern4 = /^[a-záéíóúöőüűA-Z0-9]+$/ // magyar kisbetűket is tartalmazhat.
+    const text1 = 'abrakadabra'; // 'abrakadabra', index: 0
+    console.log(text1.match(pattern1)) 
+    const pattern5 = /^\w+$/ // ugyanaz mint /^[a-zA-Z0-9_]+$/
+    // \W ennek a tagadása: ne legyen benne a-z, A-Z 0-9 vagy _:  /^[^a-zA-Z0-9_]+$/
+    // \d csak számok [0-9]
+    // \D Ne tartalmazzon számjegyet [^0-9]
+
+    </script>
+</body>
+</html>

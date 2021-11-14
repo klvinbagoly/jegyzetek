@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+
+        const numericArray = [11,22,33,44,55];
+
+        const exponentArray = numericArray.map(item=>item**2); 
+        // Egy új tömböt ad vissza, paramétere a tömb egy-egy eleme.
+        console.log(exponentArray);
+
+        console.log(numericArray.map((item, index)=>item*index)) 
+        //A második paraméter az elem sorszáma(indexe) a tömbön belül.
+    </script>
+</body>
+</html>

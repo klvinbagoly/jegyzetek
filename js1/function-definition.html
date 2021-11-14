@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+
+        console.log (getGrossPriceFD(10000, 27)) // 12700
+        // Function declaration.
+        function getGrossPriceFD(netPrice, vatPercent){
+            return netPrice * (1 + vatPercent / 100);
+        }
+        
+        console.log (getGrossPriceFE(10000, 27)) // Uncaught ReferenceError: Cannot access 'getGrossPriceFE' before initialization
+        // Function expression.
+        const getGrossPriceFE = function(netPrice, vatPercent){
+            return netPrice * (1 + vatPercent / 100);
+        }
+
+    </script>
+</body>
+</html>

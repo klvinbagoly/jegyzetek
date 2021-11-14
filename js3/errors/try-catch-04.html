@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    'use strict';
+
+    const jsonData = `
+{
+"firstName":"John",
+"lastName":"Doe"
+}
+`
+    try {
+      const user = JSON.parse(jsonData);
+      if (!user.firstName || !user.lastName || !user.age) {
+        throw new ReferenceError('Missing property')
+      }
+    } catch (error) {
+      if (error instanceof ReferenceError) {
+        console.error('Custom Error: ', error.message)
+      } else if (error instanceof SyntaxError) {
+        console.error('Szintaktikai hiba.')
+      } else {
+        console.error(error.message)
+      }
+    } finally { // a finally blokk minden esetben lefut.
+      console.log('Parse ready.')
+    }
+
+    // Lehet több try/catch ág is.
+  </script>
+</body>
+
+</html>

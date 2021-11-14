@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    'use strict';   // Sütikezelő objektum létrehozása.
+
+    const cookieHandler = {
+      setCookie(name, value, expirationDays = 365, path = '/'){
+        const now = new Date();
+        now.setTime(now.getTime() + (expirationDays * 24*60*60*1000));
+        const expires = now.toUTCString();
+        document.cookie = `${name}=${value};expires=${expires};path=${path}`;
+      },   
+      // Lekérdezzük a dátumot. Hozzáadjuk a napok számát(msec-ra konvertálva). 
+      //Átalakítjuk UTC string formátumba a cookie-hoz. Megírjuk a cookie-t. 
+      getCookie(name){
+        const keyValuePairs = document.cookie.split('; ')
+        .find(cookie => cookie.startsWith(`${name}=`));
+        return keyValuePairs ? keyValuePairs.split('=')[1] : ''
+      },
+
+      // A document.cookie stringként adja vissza a cookie-kat, kulcs-érték  párokban.
+      // Felosztjuk a stringet tömbre ('; ') mentén, majd megkeressük azt, amelyika megadott névvel kezdődik (+'=')
+      // Visszaadja a hozzá tartozó értéket.
+      checkCookie(name){
+        const exists = cookieHandler.getCookie(name);
+        return exists ? true : false;
+      },
+      // Megvizsálja létezik-e az adott nevű süti.
+      deleteCookie(name){
+        document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
+      }
+    };
+
+
+    cookieHandler.setCookie('username','klvinbagoly', 10, '/');
+    cookieHandler.setCookie('job','pianist')
+    console.log(document.cookie) 
+    // // Az összes sütit kiírja: 'name=value; ' formátumban.
+    console.log(cookieHandler.getCookie('job'))
+    console.log(cookieHandler.checkCookie('job'))
+    cookieHandler.deleteCookie('job')
+  </script>
+</body>
+</html>

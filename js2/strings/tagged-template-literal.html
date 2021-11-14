@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+
+        const user = {
+                firstName:'John',
+                lastName: 'Doe',
+                age: '30'
+            };
+
+        const tag = (texts, ...values) => 
+            texts.map((text, index) =>
+            `${text}${values[index] ? `<strong>${values[index].toLocaleUpperCase()}</strong>`: ''}`
+            ).join('');
+            // A tagged template literal egy függvény meghívási mód.
+        // Az első paraméter (texts) egy tömbben fogja tartalmazni a string literalokat, a values a kiolvasott érték(ek)et.
+        // Zárójel helyett ``-ben megadott paraméterekkel.
+        // Az egyes szövegeket összefűzi az adott indexű érték (ha van) nagybetűs és félkövér változatával.
+        const template = tag`My name is ${user.firstName} ${user.lastName} and i'm ${user.age} years old.`
+        //A spread operátor nélkül csak a firstName-et kapja meg. (vagy ahány argumentumot írunk a texts után)
+        document.body.innerHTML = template;
+    </script>
+</body>
+</html>

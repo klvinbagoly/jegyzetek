@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    'use strict';
+
+    const numbers = [12,333,4,5555,66];
+    for (let key in numbers) {
+      if (numbers.hasOwnProperty(key)){  // 
+        console.log(key); // A kulcsot, tömb esetén az indexet írja ki.
+      }
+    }
+
+    for (let value of numbers){
+      console.log(value)
+    }
+    for (let value of Object.keys(numbers)){ // Hasonlóan működnek, ha a tömb nem szekvenciális.
+      console.log(value)
+    }
+  </script>
+</body>
+</html>

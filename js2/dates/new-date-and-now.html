@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    'use strict';
+
+    // Új Date object létrehozása: a new kulcsszóval.
+    const dateNow = new Date();
+    // Megjelenése: Date string: Hét napja, hónap nap év, idő, időzóna
+    console.log(dateNow)     // Pl. Fri Nov 05 2021 17:34:47 GMT+0100 (közép-európai téli idő)
+
+    //Konkrét dátum megadási módjai.
+    const date1 = new Date('October 8, 2019 11:50:10');
+    console.log(date1)
+    const date2 = new Date('2019-10-08T11:50:10');
+    console.log(date2)
+    const date3 = new Date(2019, 9, 8, 11, 50, 10, 555); // a hónapokat 0-tól számolja.
+    console.log(date3)
+
+
+    console.log(dateNow.toJSON())
+
+    const dateString = Date()   // New kulccszó nélkül nem objektum, csak string formátum.
+    //console.log(dateString.toJSON()) => Hiba, nincsenek obj. metódusai.
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        const people = [
+            {
+                firstName:'John',
+                lastName: 'Doe'
+            },
+            {
+                firstName:'Jane',
+                lastName: 'Doe'
+            }
+        ];
+// Tömbök összefűzése template literallal.
+        const template = `<div>
+            ${people.map(person=>`<p>${person.firstName} ${person.lastName}</p>`).join('')}
+            </div>`;  
+
+            console.log(template);
+            document.body.innerHTML = template;
+        // <div>
+        //     <p>John Doe</p>
+        //     <p>Jame Doe</p>
+        // </div>
+    </script>
+</body>
+</html>

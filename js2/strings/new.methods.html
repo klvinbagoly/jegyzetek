@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+
+        console.log('hello'.startsWith('he')); /// Boolean: ezzel kezdődik-e a string?
+        console.log('hello'.startsWith('el',1)); /// opcionális:a kezdés indexe.('ello')
+        console.log('hello'.endsWith('lo')); //így végződik a string?
+        console.log('hello'.endsWith('ll', 4));//Opcionális: a vizsgált string hossza('hell')
+        console.log('hello'.includes('ll')); // Megtalálható-e benne ez a string?
+        console.log('hello'.repeat(5)); // Ismétlés.
+        console.log('3456'.padStart(10, '*'));// Feltölti a megadott hosszúságig balra a megadott stringgel.
+        console.log('3456'.padEnd(10,'*$'));//jobbra
+        console.log('    trim    '.trimStart()); 
+        console.log('    trim    '.trimEnd());
+        
+    </script>
+</body>
+</html>

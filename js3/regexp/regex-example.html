@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    'use strict';
+     // TAJ szám, ID, és név validálása.
+     const Validator = {
+       patterns: {
+         taj: /^(\d{3} ){2}\d{3}$/,  // Kezdődjön pontosan 3 számjaggyel és egy szóközzel, ez 2-szer, majd még 3 számjegy.
+         id: /^\d{6}[A-Z]{2}$/,      // 6 db számjegy, 2 nagybetű.
+        name: /^[A-ZÁÉÍÓÚÖŐÜŰ][a-záéíóúöőüű]+$/
+
+       },
+       validate(text, type){
+         return text.match(this.patterns[type]) ? true : false
+       }
+     }
+
+
+     console.log(Validator.validate('123 456 789','taj'))
+     console.log(Validator.validate('123456OI','id'))
+     console.log(Validator.validate('Józseg','name'))
+  </script>
+</body>
+</html>

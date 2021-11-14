@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    'use strict';
+
+    const jsonData = `
+{
+  "firstName":"John",
+  "lastName":"Doe"
+}
+`
+    // Különböző típusú hibák kezelése.
+    try {
+      const user = JSON.parse(jsonData);
+      if (!user.firstName || !user.lastName || !user.age) {
+        throw new ReferenceError('Missing property') // Hiba objektum létrehozása, hibaüzenettel együtt.
+      }
+    } catch (error) {
+      if (error instanceof ReferenceError) { // Először a gyakoribb, valószínűbb hibákat kezeljük le.
+        console.error('Custom Error: ', error.message)
+      } else if (error instanceof SyntaxError) {
+        console.error('Szintaktikai hiba.')
+      } else {
+        console.error(error.message)
+      }
+    }
+  </script>
+</body>
+
+</html>

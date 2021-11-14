@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+
+        const arrowFunction1 = firstName => {} // Undefined visszatérés (implicit return)
+        // 1 paraméternél nem kell zárójel.
+        const arrowFunction2 = firstName => 'Hello ' + firstName + '!';//Explicit return(1 utasítás)
+        const arrowFunction3 = firstName => {name: firstName}// Undefined, ez egy label.
+        const arrowFunction4 = firstName => ({name: firstName}); // Objektum visszatérés
+        const arrowFunction5 = firstName => {return{name: firstName}}; // Objektum visszatérés 2.
+
+
+    </script>
+</body>
+</html>
