@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    'use strict';
+
+    const cat = new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          sound: 'miau',
+          loyal: false
+        })
+      }, 3000)
+    })
+    const dog = new Promise((resolve, reject) => {
+      reject('Promise error')
+    })
+    // allSettled: Ha az összes promise lefutott (fulfilled/rejected), akkor megy a then ágra.
+    Promise.allSettled([cat, dog]).then((results) => {
+        const [cat, dog] = results;
+        console.log(cat, dog)
+      })
+      .catch((error) => console.error(error))
+
+
+    ///{status: 'fulfilled', value: {…}}status: "fulfilled"value: {sound: 'miau', loyal: false}[[Prototype]]: Object {status: 'rejected', reason: 'Promise error'}
+  </script>
+</body>
+
+</html>

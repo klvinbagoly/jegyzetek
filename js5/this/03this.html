@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    'use strict';
+
+    const user = {
+      firstName: 'John',
+      lastName: 'Doe',
+      speak(message) {
+        function logger() {
+          console.log(this) // Strict módban: undefined, különben Window
+        }
+        logger()
+      }
+    }
+
+    // Minden függvény saját this-t hoz létre, kivéve arrow function.
+    user.speak('Hi')
+  </script>
+</body>
+
+</html>

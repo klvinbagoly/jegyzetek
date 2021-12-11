@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    'use strict';
+
+    function resolve(value) {
+      return new Promise((resolve, reject) => {
+        setTimeout(resolve, 2000, value * 2)
+      })
+    }
+    // Soros futtatás: egymás után megvárja az eredményt, kiír: 4 mp
+    async function serial() {
+      const a = await resolve(1);
+      const b = await resolve(2);
+      return a + b
+    }
+
+    // Párhuzamos futtatás: kiír 2 mp.
+    async function parallel() {
+      const promiseA = resolve(10);
+      const promiseB = resolve(20);
+      return (await promiseA) + (await promiseB)
+    }
+
+
+    serial().then(console.log)
+    parallel().then(console.log)
+
+    // Futási idő mérése: Performance objektum
+    async function executionTime(func = function () {}) {
+      const start = performance.now();
+      const result = await func();
+      const end = performance.now();
+      console.log({
+        functionName: func.name,
+        executionTime: end - start,
+        result
+      })
+    }
+
+    // Async függvény futási idejét async függvénnyel lehet:
+    //console.log(executionTime(serial)) // 0.10000014305114746 ms ha nem async föggvény
+
+    //executionTime(serial).then(console.log) // 4015 körül
+
+    executionTime(serial);
+    //{functionName: 'parallel', executionTime: 2359.2000000476837, result: 60}executionTime: 2359.2000000476837functionName: "parallel"result: 60[[Prototype]]: Object
+
+    executionTime(parallel);
+
+    // {functionName: 'serial', executionTime: 4378, result: 6}
+    executionTime()
+
+    // {functionName: 'func', executionTime: 0.10000014305114746, result: undefined}executionTime: 0.10000014305114746functionName: "func"result: undefined[[Prototype]]: Object
+  </script>
+</body>
+
+</html>

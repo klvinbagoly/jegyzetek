@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    'use strict';
+
+    const user = {
+      firstName: 'John',
+      lastName: 'Doe',
+      speak() { // Itt létrejön a this = user
+        const logger = () => console.log(this); // Nem változtatja meg a this-t.
+        logger()
+      }
+    }
+
+    // Régi megoldás
+    const user2 = {
+      firstName: 'John',
+      lastName: 'Doe',
+      speak() {
+        const self = this;
+
+        function logger() {
+          console.log(self)
+        };
+        logger()
+      }
+    }
+
+
+    user.speak();
+    user2.speak()
+  </script>
+</body>
+
+</html>

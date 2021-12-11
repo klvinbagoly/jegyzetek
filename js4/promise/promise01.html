@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    'use strict';
+    // Promise: egy aszinkron művelet állapotát hordozza.
+    // Létrehozása konstruntorral: a paraméter egy executor function. (ami általában egy aszinkron műveletet végez.)
+    const samplePromise = new Promise((resolve) => {
+      setTimeout(() => {
+        resolve('Promise is fulfilled.')
+      }, 3000)
+    });
+    // Aszinkron művelet futtatása: then()
+    // Két paraméter: mit tegyen sikeres/sikertelen lefutás esetén
+    samplePromise.then((data) => console.log(data)) // Resolve fv. megkapja a callback-ben átadott adatot.
+    // A then() egy Promise-t ad vissza, ezért láncolatot lehet létrehozni. 
+  </script>
+</body>
+
+</html>

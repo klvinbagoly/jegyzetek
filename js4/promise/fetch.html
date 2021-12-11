@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    'use strict';
+
+    // XML HTTP Request: ...
+
+    // Fetch:
+    const result = fetch('./data.json')
+      .then((data) => data.json())
+      .then((data) => console.log(data.users))
+
+    // HTTP header-ek megadása: kétféle módon: Objektum
+    const fetchHeaders = new Headers({
+      'Content-Type': 'application/json'
+    })
+    // Vagy tömbösített tömbök:
+    //   const fetchHeaders = new Headers([
+    //     ['Content-Type', 'application/json']
+    // ])
+
+    const fetchOptions = {
+      method: 'GET',
+      headers: fetchHeaders,
+      mode: 'cors',
+      cache: 'no-cache'
+    }
+
+    const result2 = fetch('./data.json')
+      .then((data) => data.json())
+      .then((data) => console.log(data.users))
+  </script>
+</body>
+
+</html>

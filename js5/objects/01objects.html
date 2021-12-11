@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    'use strict';
+    // Objectumok létrehozási módjai: Literál
+    const objLiteral = {};
+    // Konstruktor
+    const objConstruct = new Object();
+    // Saját konstruktor függvény: egyedi típusú objektumok létrehozására.
+    function User(name, role) {
+      console.log(this)
+      this.name = name; // this = a létrehozott objektum (csak ha a new kulcsszóval hívjuk meg, különben undefined!)
+      this.role = role;
+    }
+
+    const johnDoe = new User('John Doe', 'user');
+    const janeDoe = new User('Jane Doe', 'admin');
+    console.log(johnDoe, janeDoe); // User {name: 'John Doe', role: 'user'} User {name: 'Jane Doe', role: 'admin'}
+  </script>
+</body>
+
+</html>

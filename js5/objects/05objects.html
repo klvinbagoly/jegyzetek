@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    'use strict';
+
+    const user = {
+      name: 'Jane Doe',
+      get firstName() {
+        return this.name.split(' ')[0]
+      },
+      set firstName(value) {
+        this.name = `${value} ${this.name.split(' ')[1]}`
+      },
+      get lastName() {
+        return this.name.split(' ')[1]
+      },
+      set lastName(value) {
+        this.name = `${this.name.split(' ')[0]} ${value}`
+
+      }
+    }
+
+    console.log(user.firstName) //Jane
+    console.log(user.lastName) // Doe
+    user.firstName = 'John';
+    user.lastName = 'Doedoe';
+    console.log(user.name) // John Doedoe
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    'use strict';
+
+    console.log('start')
+
+    setTimeout(() => console.log(0), 0)
+    setTimeout(() => console.log(1000), 1000)
+
+    console.log('end')
+
+    // Konzolon: start, ennd, 0, 1000. Event, Timer, HTTP request => task queue-be kerülnek,
+    // És csak akkor kerülnek meghívásra, ha kiürül a stack (ha lefutott a bennelévő script)
+  </script>
+</body>
+
+</html>

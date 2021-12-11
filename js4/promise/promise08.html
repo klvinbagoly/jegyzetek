@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    'use strict';
+
+    const promises = [
+      new Promise((resolve, reject) => setTimeout(resolve, 3000, '3000 HUF')),
+      new Promise((resolve, reject) => setTimeout(resolve, 2000, '2000 HUF')),
+      new Promise((resolve, reject) => setTimeout(resolve, 1000, '1000 HUF')),
+      new Promise((resolve, reject) => setTimeout(resolve, 4000, '4000 HUF'))
+      //3. paraméter átadódik a callback-nek(resolve)
+    ];
+
+    Promise.race(promises).then(console.log) // 1000 HUF
+    // az első promise teljesülésénél a then lefut.
+    Promise.all(promises).then(console.log) //(4) ['3000 HUF', '2000 HUF', '1000 HUF', '4000 HUF']
+  </script>
+</body>
+
+</html>

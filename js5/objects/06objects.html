@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    'use strict';
+
+    const user = {
+      _name: 'Jane Doe',
+      get name() {
+        return this._name
+      }
+    }
+    console.log(user.name) // RangeError: Maximum call stack size exceeded
+    //Ugyanaz a getter és a tulajdonság neve, => endless loop
+    // Nevezzük el másképp: _name vagy getName
+  </script>
+</body>
+
+</html>

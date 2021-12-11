@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    'use strict';
+
+    function Person(name) {
+      this.name = name;
+    }
+
+
+    Person.prototype.sayHi = function () {
+      return 'Hi';
+    }
+
+    function User(name, role) {
+      Person.call(this, name); // a Person-től örökli a name tulajdonságot.
+      this.role = role;
+    }
+
+    User.prototype = Object.create(Person.prototype); // Átadom az egész prototype-ját.
+    User.prototype.constructor = User; // Visszaállítjuk a konstr. fv-t
+    User.prototype.whoAmI = function () {
+      return `I'm ${this.name}`
+    }
+
+    const person1 = new Person('Person1'); //Person {name: 'Person1'}
+    const person2 = new Person('Person2'); // Person {name: 'Person2'}
+    const user1 = new User('User1', 'user'); //User {name: 'User1', role: 'user'}
+    const user2 = new User('User2', 'user'); //User {name: 'User2', role: 'user'}
+    console.log(person1, person2);
+    console.log(user1, user2);
+    console.log(user1.sayHi()) // Hi
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    'use strict'; // Promise hibakezelés
+
+
+    const samplePromise = new Promise((resolve, reject) => { // A két paraméter fv. közül mindig csak az egyik fut le.
+      setTimeout(() => {
+        if (false) {
+          resolve('Promise is fulfilled.')
+
+        } else {
+
+          reject(new Error('Promise error.'))
+        }
+      }, 3000)
+    });
+
+    samplePromise
+      .then((data) => console.log(data),
+        //(error) => console.error(error), //Kaphat egy második paramétert, hiba kezelésére
+        // Vagy: a catch metódus kezeli a hibát.
+      ).catch((error) => console.error(error))
+  </script>
+</body>
+
+</html>

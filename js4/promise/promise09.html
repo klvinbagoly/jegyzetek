@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    'use strict';
+
+    const thenable = {
+      age: 30,
+      then(resolve, reject) {
+        setTimeout(() => resolve(this.age * 2), 1000)
+      }
+    }
+    // Automatikusan a resolve ágra ugrunk:
+    Promise.resolve('Success').then(result => {
+      console.log(result); //Success
+      return thenable;
+    }).then((value) => console.log(value)) //60. Meghívjuk a thenable object then metódusát.
+  </script>
+</body>
+
+</html>

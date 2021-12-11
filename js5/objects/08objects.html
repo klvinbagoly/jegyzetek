@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    'use strict';
+
+    const user = {
+      name: 'John Doe',
+    };
+    // Tulajdonságok tulajdonságai:
+
+    console.log(Object.getOwnPropertyDescriptor(user, 'name'));
+    //{value: 'John Doe', writable: true, enumerable: true, configurable: true}
+    // írható-e a tulajdonság, felsorolható-e pl. for looppal, törölhető-e.
+    // Megadása:
+
+    Object.defineProperty(user, 'firstName', {
+      value: 'John',
+      writable: false
+    })
+    console.log(Object.getOwnPropertyDescriptor(user, 'firstName'));
+    // Mindegyik false lesz alapértelmezetten.
+    console.log(Object.keys(user)) // ['name']
+    // Get, set metódusokat is meg lehet adni.
+  </script>
+</body>
+
+</html>

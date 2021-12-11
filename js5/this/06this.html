@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    'use strict';
+
+    const user = {
+      firstName: 'John',
+      lastName: 'Doe',
+      speak(message) {
+        console.log(this);
+        console.log(`${this.firstName} ${this.lastName} says ${message}`)
+      }
+    }
+
+    const speak = user.speak;
+    //speak("D'OH!")// Cannot read property of undefined: this=undefined
+
+    speak.call(user, "D'OH!") // John Doe says D'OH!
+    // függvény.call(this-objektum, ...paraméterek)
+
+    const user2 = {
+      firstName: 'Jane',
+      lastName: 'Doe'
+    };
+
+    speak.call(user2, "D'OH!") // Jane Doe says D'OH!
+
+    speak.apply(user2, ["D'OH!"]) // Ugyanaz, csak tömbben a paraméterek.
+
+
+    const speakBind = user.speak.bind(user2); // fv.bind(this-objektum), létrehoz egy új fv-t a megadott this-szel.
+    speakBind('YEAH') // Jane Doe says YEAH
+  </script>
+</body>
+
+</html>

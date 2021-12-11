@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    'use strict';
+
+    // function one(args, callback) {
+    //   console.log('one', args);
+    //   callback()
+    // }
+
+    // function two(args, callback) {
+    //   console.log('two', args);
+    //   callback()
+    // }
+
+    // function three(args, callback) {
+    //   console.log('three', args);
+    //   callback()
+    // }
+
+    // function four(args, callback) {
+    //   console.log('four', args);
+    //   callback()
+    // }
+
+    // function five(args, callback) {
+    //   console.log('five', args);
+    //   callback()
+    // }
+
+
+
+    // one(1, function () {
+    //   two(2, function () {
+    //     three(3, function () {
+    //       four(4, function () {
+    //         five(5, function () {
+    //           //...
+    //         })
+    //       })
+    //     })
+    //   })
+    // }) HELYETT:
+
+    function one(args) {
+      console.log('one', args)
+    }
+
+    function two(args) {
+      console.log('two', args)
+    }
+
+    function three(args) {
+      console.log('three', args)
+    }
+
+    function four(args) {
+      console.log('four', args)
+    }
+
+    function five(args) {
+      console.log('five', args)
+    }
+
+    function caller() {
+      one(1);
+      two(2);
+      three(3);
+      four(4);
+      five(5);
+    }
+    caller()
+  </script>
+</body>
+
+</html>

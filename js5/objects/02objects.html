@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    'use strict';
+    // Objektum metódusok:
+    function User(name, role) {
+      console.log(this)
+      this.name = name;
+      this.role = role;
+      // this.whoAmI = () => {
+      //   console.log(`I'm ${this.name}.`)
+      // }
+    } // HELYETT: prototye objektum metódusaként:
+    // A prototype függvények tulajdonsága.
+    // A prototype metódusai öröklődnek a prototye chain-en keresztül a függvénnyel létrehozott objektumokra.
+    User.prototype.whoAmI = function () {
+      console.log(`I'm ${this.name}.`)
+    }
+
+    const johnDoe = new User('John Doe', 'user');
+    const janeDoe = new User('Jane Doe', 'admin');
+    console.log(johnDoe, janeDoe);
+    johnDoe.whoAmI();
+    janeDoe.whoAmI()
+  </script>
+</body>
+
+</html>
