@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    'use strict';
+    const sampleMap = new Map();
+    sampleMap.set('foo', 123)
+      .set('moo', 456)
+      .set('boo', 789)
+
+    sampleMap.delete('foo')
+    console.log(sampleMap.size) // 2
+    console.log(sampleMap.keys()) // MapIterator {'moo', 'boo'}
+    console.log(sampleMap.values()) // MapIterator {456, 789}
+    console.log(sampleMap) // Map(2) {'moo' => 456, 'boo' => 789}
+
+    sampleMap.forEach((value, key) => console.log('Key: ', key, 'Value: ', value))
+    //Key:  moo Value:  456
+    //Key:  boo Value:  789
+
+    sampleMap.clear(); // Map kiürítése.
+    console.log(sampleMap.size) // 0
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    'use strict';
+    // Map: Kulcs-érték párokat tartalmaz, sorrendben, a kulcs lehet bármi (object is)
+
+    const sampleMap = new Map();
+    sampleMap.set('foo', 123)
+      .set('moo', 456)
+      .set('boo', 789) // Map értékeinek létrehozása
+    console.log(sampleMap.get('foo')) // 123
+    console.log(sampleMap.has('boo')) // Szerepel-e az adott kulcsú elem?
+
+    // Objektum használata kulcsként:
+
+    const objKey = {
+      name: 'John Doe'
+    };
+    sampleMap.set(objKey, 'dead');
+    console.log(sampleMap.get(objKey)) // dead
+  </script>
+</body>
+
+</html>

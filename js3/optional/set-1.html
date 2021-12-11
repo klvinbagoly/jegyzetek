@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    'use strict';
+
+    const languages = new Set();
+    languages.add('php')
+      .add('python')
+      .add('python')
+      .add('pearl') // elemek hozzáadása
+
+    console.log(languages.size, languages) // 3,  Set(3) {'php', 'python', 'pearl'}
+    // Set elemek lekérdezése
+    console.log(languages.entries()) // SetIterator {'php' => 'php', 'python' => 'python', 'pearl' => 'pearl'}
+    console.log(languages.values()) // SetIterator {'php', 'python', 'pearl'}
+    console.log(languages.has('php')) // true
+  </script>
+</body>
+
+</html>

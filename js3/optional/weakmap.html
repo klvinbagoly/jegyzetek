@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    'use strict';
+
+    let key1 = {
+      name: 'John Doe'
+    };
+    let key2 = {
+      name: 'Jane Dee'
+    };
+
+    const sampleMap = new Map();
+    const sampleWeakMap = new WeakMap();
+
+    sampleMap.set(key1, 'dead')
+    //sampleWeakMap.set('key2', 'dead') //Uncaught TypeError: Invalid value used as weak map key
+    // Weakmap property csak object típus lehet.
+    sampleWeakMap.set(key2, 'dead');
+
+    console.log(sampleMap.get(key1));
+    console.log(sampleWeakMap.get(key2));
+
+    //Gyenge referencia
+    key1 = null;
+    sampleMap.forEach((value, key) => console.log(key, value)) // {name: 'John Doe'} 'dead'
+    // a Map-en belül forEach-csel el lehet érni az elemet
+
+    key2 = null;
+    // WeakMap: nincs ForEach, csak get, set, has, delete.
+    console.log(sampleWeakMap.get(key2)) // undefined
+  </script>
+</body>
+
+</html>

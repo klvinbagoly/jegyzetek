@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    'use strict';
+    // Symbol használata object hidden propertyként
+    // Ciklusokban nem jelenik meg
+
+    const id = Symbol('id');
+    const person = {
+      [id]: 1,
+      firstName: 'John',
+      lastName: 'Doe'
+    }
+    for (const key in person) {
+      if (person.hasOwnProperty(key)) {
+        console.log(key) // firstName, lastName
+      }
+    }
+
+    // Symbol property-k lekérdezése:
+    console.log(Object.getOwnPropertySymbols(person)) // Egy tömbben adja vissza: [Symbol(id)]
+    console.log(Object.getOwnPropertySymbols(person).map(symbol => person[symbol])) // [1]
+  </script>
+</body>
+
+</html>

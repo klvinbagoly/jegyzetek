@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    'use strict';
+    const languages = new Set();
+    languages.add('php')
+      .add('python')
+      .add('python')
+      .add('pearl')
+
+
+    languages.delete('php')
+    console.log(languages.size) // 2
+
+    languages.clear()
+    console.log(languages.size) // 0
+
+
+    languages.add('php')
+      .add('python')
+      .add('pearl')
+
+    const values = languages.values();
+    console.log(values.next()) // {value: 'php', done: false}
+    // value: a soron következő érték, done: végeztünk-e a settel.
+    console.log(values.next()) // {value: 'python', done: false}
+    console.log(values.next()) // {value: 'pearl', done: false}
+    console.log(values.next()) // {value: 'undefined', done: true}
+  </script>
+</body>
+
+</html>

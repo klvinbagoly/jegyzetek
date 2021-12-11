@@ -11,6 +11,14 @@
 <body>
   <script>
     'use strict';
+
+    const mySymbol = Symbol();
+    console.log(typeof mySymbol); // 'symbol'
+    const mySymbol2 = Symbol('mySymbol') // Description lehet string vagy szám
+    const mySymbol3 = Symbol('mySymbol')
+    console.log(mySymbol2 == mySymbol3) // false: két symbol sohase egyenlő
+    // Minden symbolnak egyedi azonosítója van
+    console.log(mySymbol.toString(), mySymbol2.toString()) // Symbol() Symbol(mySymbol)
   </script>
 </body>
 
